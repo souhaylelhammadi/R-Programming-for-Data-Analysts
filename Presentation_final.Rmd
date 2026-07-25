@@ -1,0 +1,54 @@
+---
+title: "Presentation_final"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+df <- read.csv("~/Downloads/R-Programming-for-Data-Analysts-main/parks_and_rec_budget.csv")
+```
+
+### Total Budget by Department
+
+```{r}
+df %>%
+  group_by(Department) %>%
+  summarise(Total_Budget = sum(Budget_in_Thousands, na.rm = TRUE)) %>%
+  ggplot(aes(x = reorder(Department, -Total_Budget),
+             y = Total_Budget,
+             fill = Department)) +
+  geom_col() +
+  ggtitle("Total Budget by Department") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+### Annual Budget
+
+```{r}
+df %>%
+  group_by(Year) %>%
+  summarise(Annual_Budget = sum(Budget_in_Thousands, na.rm = TRUE)) %>%
+  ggplot(aes(x = Year, y = Annual_Budget)) +
+  geom_line() +
+  geom_point() +
+  ggtitle("Annual Budget for All Departments") +
+  theme_minimal()
+```
+
+### Budget by Department Over Time
+
+```{r}
+df %>%
+  ggplot(aes(x = Year,
+             y = Budget_in_Thousands,
+             color = Department,
+             group = Department)) +
+  geom_line() +
+  ggtitle("Annual Budget by Department") +
+  theme_minimal()
+```

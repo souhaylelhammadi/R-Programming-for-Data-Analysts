@@ -1,0 +1,13 @@
+Customer_ID,Customer_Name,Email,Transaction_Amount,Transaction_Date,Category
+101,Alice Johnson,alice.j@example.com,150.75,2024-01-10,Electronics
+102,Bob Smith,bob_smith@example.com,200.5,01/15/2024,Groceries
+103,Charlie Brown,charlie.b@example,,2024-02-20,Electronics
+104,,emma@example.com,99.99,"March 5, 2024",electronics
+105,Emma Wilson,emma.wilson@example.com,250.0,2024-03-10,Groceries
+106,David Lee,david.lee@example.com,175.2,10-04-2024,groceries
+107,Frank White,frankwhite@example.com,300.0,2024/05/15,Furniture
+108,Grace Adams,grace.a@example.com,120.0,15-06-2024,Furnitures
+109,Helen Carter,,210.75,07/20/2024,Clothing
+110,Ian Brooks,ian.b@example.com,,"August 25, 2024",Clothing
+101,Alice Johnson,alice.j@example.com,150.75,2024-01-10,Electronics
+104,David Lee,david.lee@example.com,175.2,10-04-2024,groceries
